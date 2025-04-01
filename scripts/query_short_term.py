@@ -17,7 +17,7 @@ def query_tags(conn_str, tag_dict, time_window, period):
             SELECT TS, avg AS "{label}"
             FROM aggregates
             WHERE Name = '{tag}'
-            AND TS > (CURRENT_TIMESTAMP - {time_window})
+            AND TS > (CURRENT_TIMESTAMP - 24:00:00)
             AND Period = '{period}'
         '''
 
@@ -25,6 +25,8 @@ def query_tags(conn_str, tag_dict, time_window, period):
             df = pd.read_sql(query, conn)
             df["TS"] = pd.to_datetime(df["TS"], format="%d-%b-%y %H:%M:%S.%f", errors="coerce").dt.floor("min")
             df.dropna(subset=["TS"], inplace=True)  # Drop rows with unparseable TS
+
+            print(f"{label}: {len(df)} rows")  # Diagnostic output
 
             if df_merged is None:
                 df_merged = df

@@ -8,14 +8,14 @@ electrode_1:
   tag_names:
     M1 Furnace Power(MW): M1-FCE-MTR-FRN-Pwr-Tot
     M1 Furnace Power(SP): M1_MINSTRAL_MW_SP
-    M1 Furnace Tap Cahngers in Auto: M1-SEL-GRP-AUTOUTIL
+    M1 Furnace Tap Changers in Auto: M1-SEL-GRP-AUTOUTIL
     Electrode 1 in Auto: M1-ELE-260101-UTIl
     Electrode Control Active: M1_ELE_260101_AUTOACT
     Electrode 1 I2: M1-FCE-UI-399-Total
     Electrode 1 Raise Lock: M1_MINSTRAL_EL_INHIT_UP1
     Electrode 1 lower Lock: M1_MINSTRAL_EL_INHIT_DN1
-    Electrode 1 Stk Up: M1_MINSTRAL_EL_STK_UP1
-    Electrode 1 Stk Dn: M1_MINSTRAL_EL_STK_DN1
+    Electrode 1 Stk Up: M1_MINSTRAL_EL_STK_UP_1
+    Electrode 1 Stk Dn: M1_MINSTRAL_EL_STK_DN_1
     Electrode 1 Paste Temperature: M1-EEA-TI-105
     Electrode 1 Power: M1_MINSTRAL_EL_MW_1
     Electrode 1 Current(kA): M1_MINSTRAL_EL_CUR_1
