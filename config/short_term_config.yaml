@@ -4,36 +4,23 @@
 electrode_1:
   connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
   tag_names:
+    M1 Furnace Power(MW): M1-FCE-MTR-FRN-Pwr-Tot
+    M1 Furnace Tap Cahngers in Auto: M1-SEL-GRP-AUTOUTIL
+    Electrode 1 in Auto: M1-ELE-260101-UTIl
+    Electrode Control Active: M1_ELE_260101_AUTOACT
+    Electrode 1 I2: M1-FCE-UI-399-Total
+    Electrode 1 Raise Lock: M1_MINSTRAL_EL_INHIT_UP1
+    Electrode 1 lower Lock: M1_MINSTRAL_EL_INHIT_DN1
+    Electrode 1 Stk Up: M1_MINSTRAL_EL_STK_UP1
+    Electrode 1 Stk Dn: M1_MINSTRAL_EL_STK_DN1
+    Electrode 1 Paste Temperature: M1-EEA-TI-105
+    Electrode 1 Power: M1_MINSTRAL_EL_MW_1
     Electrode 1 Current(kA): M1_MINSTRAL_EL_CUR_1
+    Electrode 1 Resistance Target: M1_MINSTRAL_EL_R_SP_1
     Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_1
     Electrode 1 Position(mm): M1_MINSTRAL_EL_POS_1
     Electrode 1 Tenor(mm/min): M1-ELE-260101-TEN
     Electrode 1 Wesly: M1-EEA-WESTCONST-E1-PV
-    Electrode 1 Cooling Water: M1-ELE-CW-FLOW-1
-    Electrode 1 Voltage: M1-ELE-VOLTAGE-1
+    Electrode 1 Slip: M1-ELS-260101-LST-SLP
+    Electrode 1 Log Sheet Slip: M1_E1_LogSheet_Slp.RtnVa
     # Add up to 30 tag names as needed
-
-
-# Duplicate structure for electrode 2 and 3 if needed
-electrode_2:
-  connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
-  tag_names:
-    Electrode 2 Current(kA): M1_MINSTRAL_EL_CUR_2
-    Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_2
-    Electrode 2 Position(mm): M1_MINSTRAL_EL_POS_2
-    Electrode 2 Tenor(mm/min): M1-ELE-260102-TEN
-    Electrode 2 Wesly: M1-EEA-WESTCONST-E2-PV
-    Electrode 2 Cooling Water: M1-ELE-CW-FLOW-2
-    Electrode 2 Voltage: M1-ELE-VOLTAGE-2
-
-
-electrode_3:
-  connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
-  tag_names:
-    Electrode 3 Current(kA): M1_MINSTRAL_EL_CUR_3
-    Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_3
-    Electrode 3 Position(mm): M1_MINSTRAL_EL_POS_3
-    Electrode 3 Tenor(mm/min): M1-ELE-260103-TEN
-    Electrode 3 Wesly: M1-EEA-WESTCONST-E3-PV
-    Electrode 3 Cooling Water: M1-ELE-CW-FLOW-3
-    Electrode 3 Voltage: M1-ELE-VOLTAGE-3
