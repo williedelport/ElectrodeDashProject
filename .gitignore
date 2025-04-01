@@ -2,15 +2,15 @@
 __pycache__/
 *.pyc
 
-# Environment folders
+# Virtual environments
 venv/
 env/
 
-# Data & model outputs
+# Output & data
 data/
 *.pkl
 *.csv
 *.xlsx
 
-# VS Code settings (optional)
+# VS Code settings
 .vscode/

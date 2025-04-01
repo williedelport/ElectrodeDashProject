@@ -1,0 +1,34 @@
+site_name: Middelburg Ferrochrome
+area: M1
+Electrode: 1
+connection_string: DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;
+tag_names:
+  Furnace Active Power(MW): M1_MINSTRAL_MW
+  Minstral In Auto: M1_MINSTRAL_AUTO
+  Electrode 1 Current(kA): M1_MINSTRAL_EL_CUR_1
+  Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_1
+  Electrode 1 Position(mm): M1_MINSTRAL_EL_POS_1
+  Electrode 1 Tenor(mm/min): M1-ELE-260101-TEN
+  Electrode 1 Wesly: M1-EEA-WESTCONST-E1-PV
+  filters:
+    Furnace Active Power (MW):
+      min: 35.0
+      max: 45.0
+    Minstral In Auto:
+      min: 0.9
+      max: 1.0
+    Electrode 1 Current( kA):
+      min: 50
+      max: 110
+    Electrode Resistance (mOhm):
+      min: 0.1
+      max: 3.0
+    Electrode 1 Position (mm):
+      min: 0.0
+      max: 1000
+    Electrode 1 Tenor (mm/min):
+      min: 0.0
+      max: 1200
+    Electrode 1 Wesly:
+      min: 0
+      max: 20
