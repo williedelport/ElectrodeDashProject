@@ -3,6 +3,8 @@
 # Configuration for short-term data collection (updated every minute)
 electrode_1:
   connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
+  period: 00:01:00
+  time_window: 24:00:00
   tag_names:
     M1 Furnace Power(MW): M1-FCE-MTR-FRN-Pwr-Tot
     M1 Furnace Power(SP): M1_MINSTRAL_MW_SP
@@ -28,8 +30,6 @@ electrode_1:
     TX31 Tap Changer Position: M1-SEL-260184-TAPPOS
     M1 Tapping: M1-TapHole
     M1 Tap Acummulator: M1-FCE-UI-395
-   
-    # Add up to 30 tag names as needed
 
   reference_limits:
     Electrode 1 Current(kA):
