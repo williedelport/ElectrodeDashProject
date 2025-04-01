@@ -31,5 +31,5 @@ filters:
     min: 0.0
     max: 1200
   Electrode 1 Wesly:
-    min: 0
+    min: 10
     max: 20

@@ -15,6 +15,10 @@ def main():
     df.to_csv(output_path, index=False)
     logging.info(f"Saved filtered data to {output_path}")
 
+    # Proceed with KMeans analysis
+    from scripts.kmeans_analysis import run_kmeans
+    run_kmeans(output_path)
+
 if __name__ == "__main__":
     main()
 
