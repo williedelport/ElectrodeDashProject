@@ -1,0 +1,39 @@
+# config/short_term_config.yaml
+
+# Configuration for short-term data collection (updated every minute)
+electrode_1:
+  connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
+  tag_names:
+    Electrode 1 Current(kA): M1_MINSTRAL_EL_CUR_1
+    Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_1
+    Electrode 1 Position(mm): M1_MINSTRAL_EL_POS_1
+    Electrode 1 Tenor(mm/min): M1-ELE-260101-TEN
+    Electrode 1 Wesly: M1-EEA-WESTCONST-E1-PV
+    Electrode 1 Cooling Water: M1-ELE-CW-FLOW-1
+    Electrode 1 Voltage: M1-ELE-VOLTAGE-1
+    # Add up to 30 tag names as needed
+
+
+# Duplicate structure for electrode 2 and 3 if needed
+electrode_2:
+  connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
+  tag_names:
+    Electrode 2 Current(kA): M1_MINSTRAL_EL_CUR_2
+    Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_2
+    Electrode 2 Position(mm): M1_MINSTRAL_EL_POS_2
+    Electrode 2 Tenor(mm/min): M1-ELE-260102-TEN
+    Electrode 2 Wesly: M1-EEA-WESTCONST-E2-PV
+    Electrode 2 Cooling Water: M1-ELE-CW-FLOW-2
+    Electrode 2 Voltage: M1-ELE-VOLTAGE-2
+
+
+electrode_3:
+  connection_string: "DRIVER={AspenTech SQLplus};HOST=MFCSMES;PORT=10014;ADS=MFCSIP21;READONLY=N;Trusted_Connection=yes;"
+  tag_names:
+    Electrode 3 Current(kA): M1_MINSTRAL_EL_CUR_3
+    Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_3
+    Electrode 3 Position(mm): M1_MINSTRAL_EL_POS_3
+    Electrode 3 Tenor(mm/min): M1-ELE-260103-TEN
+    Electrode 3 Wesly: M1-EEA-WESTCONST-E3-PV
+    Electrode 3 Cooling Water: M1-ELE-CW-FLOW-3
+    Electrode 3 Voltage: M1-ELE-VOLTAGE-3
