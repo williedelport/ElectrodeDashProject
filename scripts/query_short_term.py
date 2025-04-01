@@ -4,30 +4,27 @@ import adodbapi
 import yaml
 import os
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 
 def load_short_term_config(config_path="config/short_term_config.yaml"):
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
 
-def query_tags(connection_string, tag_dict, minutes=1440):
+def query_tags(connection_string, tag_dict):
     results = []
-    now = datetime.now()
-    start_time = now - timedelta(minutes=minutes)
-    timestamp_format = "%Y-%m-%d %H:%M:%S"
-
     for tag_desc, tag_name in tag_dict.items():
         try:
-            query = f"""
-            SELECT TS, Value
-            FROM history
+            query = f'''
+            SELECT TS, avg AS "{tag_desc}"
+            FROM aggregates
             WHERE Name = '{tag_name}'
-            AND TS BETWEEN '{start_time.strftime(timestamp_format)}' AND '{now.strftime(timestamp_format)}'
-            ORDER BY TS
-            """
+            AND TS > (CURRENT_TIMESTAMP - 24:00:00)
+            AND Period = '00:05:00'
+            '''
             with adodbapi.connect(connection_string) as conn:
                 df = pd.read_sql(query, conn)
-                df.rename(columns={"Value": tag_desc}, inplace=True)
+                df["TS"] = pd.to_datetime(df["TS"], format="%Y-%m-%d %H:%M:%S", errors="coerce").dt.floor("min")
+                df.dropna(subset=["TS"], inplace=True)
                 results.append(df)
         except Exception as e:
             logging.error(f"Error querying tag {tag_desc} ({tag_name}): {e}")
@@ -35,7 +32,10 @@ def query_tags(connection_string, tag_dict, minutes=1440):
     if results:
         df_merged = results[0]
         for df in results[1:]:
-            df_merged = pd.merge(df_merged, df, on="TS", how="outer")
+            try:
+                df_merged = pd.merge(df_merged, df, on="TS", how="outer")
+            except Exception as e:
+                logging.error(f"Merge error for tag: {e}")
         df_sorted = df_merged.sort_values("TS")
         logging.debug(f"Merged DataFrame preview:\n{df_sorted.head()}")
         return df_sorted

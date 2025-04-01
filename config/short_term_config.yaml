@@ -23,12 +23,12 @@ electrode_1:
     Electrode 1 Tenor(mm/min): M1-ELE-260101-TEN
     Electrode 1 Wesly: M1-EEA-WESTCONST-E1-PV
     Electrode 1 Slip: M1-ELS-260101-LST-SLP
-    Electrode 1 Log Sheet Slip: M1_SlipTapeCalc_E1
     TX12 Tap Changer Position: M1-SEL-260182-TAPPOS
     TX23 Tap Cahnger Position: M1-SEL-260183-TAPPOS
     TX31 Tap Changer Position: M1-SEL-260184-TAPPOS
     M1 Tapping: M1-TapHole
     M1 Tap Acummulator: M1-FCE-UI-395
+   
     # Add up to 30 tag names as needed
 
   reference_limits:
