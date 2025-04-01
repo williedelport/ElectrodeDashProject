@@ -26,7 +26,26 @@ electrode_1:
     Electrode 1 Log Sheet Slip: M1_SlipTapeCalc_E1
     TX12 Tap Changer Position: M1-SEL-260182-TAPPOS
     TX23 Tap Cahnger Position: M1-SEL-260183-TAPPOS
-    TX 31 Tap Changer Position: M1-SEL-260184-TAPPOS
+    TX31 Tap Changer Position: M1-SEL-260184-TAPPOS
     M1 Tapping: M1-TapHole
-    Mi Tap Acummulator: M1-FCE-UI-395
+    M1 Tap Acummulator: M1-FCE-UI-395
     # Add up to 30 tag names as needed
+
+  reference_limits:
+    Electrode 1 Current(kA):
+      min: 84.6
+      sp: 92.3
+      max: 100.0
+    Electrode Resistance(mOhm):
+      min: 1.5
+      max: 2.5
+    Electrode 1 Position(mm):
+      min: 200
+      max: 450
+    Electrode 1 Tenor(mm/min):
+      min: 300
+      max: 1200
+    Electrode 1 Wesly:
+      min: 13.5
+      sp: 14.5
+      max: 15.5
