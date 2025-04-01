@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment folders
+venv/
+env/
+
+# Data & model outputs
+data/
+*.pkl
+*.csv
+*.xlsx
+
+# VS Code settings (optional)
+.vscode/
