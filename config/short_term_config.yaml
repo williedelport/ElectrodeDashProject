@@ -6,9 +6,10 @@ electrode_1:
   period: 00:01:00
   time_window: 24:00:00
   tag_names:
-    M1 Furnace Power(MW): M1-FCE-MTR-FRN-Pwr-Tot
-    M1 Furnace Power(SP): M1_MINSTRAL_MW_SP
-    M1 Furnace Tap Changers in Auto: M1-SEL-GRP-AUTOUTIL
+    Furnace Active Power(MW): M1-FCE-MTR-FRN-Pwr-Tot
+    Furnace Active Power(SP): M1_MINSTRAL_MW_SP
+    Minstral In Auto: M1_MINSTRAL_AUTO
+    Furnace Tap Changers in Auto: M1-SEL-GRP-AUTOUTIL
     Electrode 1 in Auto: M1-ELE-260101-UTIl
     Electrode Control Active: M1_ELE_260101_AUTOACT
     Electrode 1 I2: M1-FCE-UI-399-Total
@@ -28,8 +29,8 @@ electrode_1:
     TX12 Tap Changer Position: M1-SEL-260182-TAPPOS
     TX23 Tap Cahnger Position: M1-SEL-260183-TAPPOS
     TX31 Tap Changer Position: M1-SEL-260184-TAPPOS
-    M1 Tapping: M1-TapHole
-    M1 Tap Acummulator: M1-FCE-UI-395
+    Tapping: M1-TapHole
+    Tap Acummulator: M1-FCE-UI-395
 
   reference_limits:
     Electrode 1 Current(kA):

@@ -1,4 +1,3 @@
-# scripts/query_long_term.py
 import yaml
 import adodbapi
 import pandas as pd
@@ -9,8 +8,7 @@ def load_config(path="config/long_term_config.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
-# Query execution
-def run_query():
+def run_long_term_query():
     config = load_config()
     tag_names = config["tag_names"]
     filters = config["filters"]
@@ -90,4 +88,5 @@ def run_query():
     conn.close()
 
     logging.info(f"Query returned {len(df)} rows.")
+    df.to_csv("data/electrode_1_long_term.csv", index=False)
     return df
