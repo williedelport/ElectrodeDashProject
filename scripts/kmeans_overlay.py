@@ -1,11 +1,9 @@
-# This script updates k-means cluster plots to overlay short-term data (last 24h)
 import pandas as pd
 import matplotlib.pyplot as plt
 import logging
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 import matplotlib.cm as cm
-
 
 def run_kmeans_overlay():
     # Load long-term data
@@ -18,7 +16,7 @@ def run_kmeans_overlay():
     short_df.columns = short_df.columns.str.strip('"')
     short_df["TS"] = pd.to_datetime(short_df["TS"], errors="coerce")
 
-    # Mapping long-term to short-term tag names (without "M1")
+    # Mapping long-term to short-term tag names (matching column headers)
     column_mapping = {
         "Furnace Active Power(MW)": "Furnace Active Power(MW)",
         "Electrode 1 Wesly": "Electrode 1 Wesly",
@@ -41,7 +39,11 @@ def run_kmeans_overlay():
     X_short = short_df[short_columns].dropna()
 
     # Optional filtering of short-term data before plotting
-    X_short = X_short[(X_short["Furnace Active Power(MW)"] > 35) & (X_short["Electrode 1 Wesly"] > 10) & (X_short["Electrode 1 Wesly"] < 20)]
+    X_short = X_short[
+        (X_short["Furnace Active Power(MW)"] > 35) &
+        (X_short["Electrode 1 Wesly"] > 10) &
+        (X_short["Electrode 1 Wesly"] < 20)
+    ]
 
     # Rename short-term columns to match long-term names
     X_short = X_short.rename(columns={v: k for k, v in column_mapping.items()})
@@ -85,6 +87,6 @@ def run_kmeans_overlay():
         ax.legend()
 
     plt.tight_layout()
-    plt.savefig("plots/kmeans_cluster_overlay.png")
+    plt.savefig("assets/kmeans_cluster_overlay.png")
     plt.close()
-    logging.info("Overlay plot saved to plots/kmeans_cluster_overlay.png")
+    logging.info("Overlay plot saved to assets/kmeans_cluster_overlay.png")

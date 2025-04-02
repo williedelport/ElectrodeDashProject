@@ -3,6 +3,7 @@ from scripts.query_long_term import run_long_term_query
 from scripts.query_short_term import run_short_term_query
 from scripts.kmeans_clustering import run_kmeans_clustering
 from scripts.kmeans_overlay import run_kmeans_overlay
+from dashboard.dashboard_app import run_dashboard
 
 logging.basicConfig(level=logging.INFO)
 
@@ -20,6 +21,9 @@ def main():
 
     # 4. Overlay short-term on cluster plots
     run_kmeans_overlay()
+
+    # 5. Launch dashboard
+    run_dashboard()
 
 if __name__ == "__main__":
     main()
