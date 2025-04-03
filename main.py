@@ -1,29 +1,29 @@
 import logging
-from scripts.query_long_term import run_long_term_query
-from scripts.query_short_term import run_short_term_query
-from scripts.kmeans_clustering import run_kmeans_clustering
-from scripts.kmeans_overlay import run_kmeans_overlay
-from dashboard_app import run_dashboard
+from utils.query_long_term import run_long_term_query
+from utils.query_short_term import run_short_term_query
+from utils.kmeans_clustering import run_kmeans_clustering
+from utils.kmeans_generator import run_kmeans_overlay
+from dashboard_app import app
 
 logging.basicConfig(level=logging.INFO)
 
 def main():
     logging.info("Starting Electrode Dashboard workflow...")
 
-    # 1. Query long-term data (creates data/electrode_1_long_term.csv)
+    # 1. Query long-term data
     run_long_term_query()
 
-    # 2. Run KMeans clustering on long-term data
+    # 2. Run KMeans clustering
     run_kmeans_clustering()
 
     # 3. Query short-term data
     run_short_term_query()
 
-    # 4. Overlay short-term on cluster plots
+    # 4. Generate overlay
     run_kmeans_overlay()
 
-    # 5. Launch dashboard
-    run_dashboard()
+    # 5. Start dashboard
+    app.run(debug=True, port=8050)
 
 if __name__ == "__main__":
     main()

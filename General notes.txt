@@ -1,3 +1,5 @@
+http://127.0.0.1:8050/
+
 Good morning, I need to create a dash application using Python. I need a structured approach in the following order:
 1. Create a main.py to call all the scripts
 2. Create a config.yaml file for the long term data as per file submitted
@@ -36,8 +38,9 @@ b4. kmeans_clustered.csv
 Some of the files might be redundant.
 
 I am at the point we I need to populate the SCADA like display.
+Everything is set-up in GITHUB as well I am using Visual Studio Code
 
-Lets have a short discussion about this?
+Before I upload the code, lets have a short discussion about this?
 
 httpsgithub.comwilliedelportM1-Furnace-Electrode-Manager-v1.0.git
 
@@ -69,3 +72,18 @@ Furnace Active Power(MW): M1_MINSTRAL_MW
     Tap Acummulator: M1-FCE-UI-395
 
 
+What size/format do you prefer for the app?
+ Full screen web app.
+
+Should it auto-refresh data?
+ Yes, The short term data should refresh every minute. The long term data once a day say at 05:00.
+
+How are the seven short-term trends best represented?
+ Individual line plots in rows (like Pi Vision). One below each other with headings. Each one of them will need a upper limit, 
+ lower limit and target. These must be configured from the short term YAML file?
+
+Do you want dynamic filtering (e.g., electrode dropdown), or static layout for now?
+ I like the electrode dropdown idea. But let us just start getting one electrode up and running before we are duplicating?
+
+Do you want to embed static images like kmeans_cluster_overlay.png or recreate it dynamically?
+ I have found that static images lack resolutions and dynamic images are crisp and clear. Do you agree with this statement?
