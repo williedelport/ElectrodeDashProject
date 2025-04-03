@@ -1,0 +1,71 @@
+Good morning, I need to create a dash application using Python. I need a structured approach in the following order:
+1. Create a main.py to call all the scripts
+2. Create a config.yaml file for the long term data as per file submitted
+3. Get the long term data with a data base query as per the file submitted
+4. Create a config.yaml file for the data term data similar to the long term data file
+5. Get the short term data similar to the long term data query
+6. Do a "k-means" analysis on the long term data
+7. Do the SCADA like graphical display
+8. Do the seven short term trends on the short term data
+9. Do a table like display similar to Aveva Pi using spark line trends 
+10. Probably need a couple of more.py files.
+
+I would like to keep all the scripts as short as possible, rather creating more .py files.
+Lets start by doing only one electrode for the furnace and structure the software that it would be easy to do the other two electrodes.
+My biggest chalenge will be the arrangement and the placement of the items on the SCADA like screen?
+
+We have created the following files:
+1. main.py
+2. dashboard_app.py
+3. kmeans_analysis.py
+4. kmeans_clustering.py
+5. kmeans_overlay.py
+6. overlay_short_term.py
+7. query_long_term.py
+8. query_short_term.py
+9. kmeans_cluster_overlay.png
+
+a1. long_term_config.yaml
+a2. short_term_config.yaml
+
+b1. daily_kmeans_input.csv
+b2. electrode_1_long_term.csv
+b3. electrode_1_short_term.csv
+b4. kmeans_clustered.csv
+
+Some of the files might be redundant.
+
+I am at the point we I need to populate the SCADA like display.
+
+Lets have a short discussion about this?
+
+httpsgithub.comwilliedelportM1-Furnace-Electrode-Manager-v1.0.git
+
+
+------------------------
+git commit -m "Add k-means clustering with outlier removal and visualizations"
+git config --global core.editor "code --wait"
+------------------------
+Furnace Active Power(MW): M1_MINSTRAL_MW
+  Minstral In Auto: M1_MINSTRAL_AUTO
+  Electrode 1 Current(kA): M1_MINSTRAL_EL_CUR_1
+  Electrode Resistance(mOhm): M1_MINSTRAL_EL_R_1
+  Electrode 1 Position(mm): M1_MINSTRAL_EL_POS_1
+  Electrode 1 Tenor(mm/min): M1-ELE-260101-TEN
+  Electrode 1 Wesly: M1-EEA-WESTCONST-E1-PV
+
+ # Optional filtering of short-term data before plotting
+    X_short = X_short[(X_short["Furnace Active Power(MW)"] > 35) & (X_short["Electrode 1 Wesly"] > 10) & (X_short["Electrode 1 Wesly"] < 20)]
+
+    Furnace Active Power(MW)
+    Furnace Active Power(SP)
+    Minstral In Auto
+    Furnace Tap Changers in Auto
+    Electrode 1 in Auto
+    Electrode Control Active
+    TX12 Tap Changer Position
+    TX23 Tap Cahnger Position
+    TX31 Tap Changer Position
+    Tap Acummulator: M1-FCE-UI-395
+
+

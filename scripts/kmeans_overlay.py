@@ -60,7 +60,7 @@ def run_kmeans_overlay():
     y_columns = [col for col in long_columns if col != "Electrode 1 Wesly"]
     x_column = "Electrode 1 Wesly"
 
-    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+    fig, axes = plt.subplots(3, 1, figsize=(6, 12))  # Width=6, Height=12 for tall layout
     colors = cm.rainbow([0.1, 0.5, 0.9])
     for i, y_col in enumerate(y_columns):
         ax = axes[i]
@@ -76,7 +76,7 @@ def run_kmeans_overlay():
         ax.scatter(
             X_short[x_column],
             X_short[y_col],
-            color="navy",
+            color="cyan",
             label="Short-Term",
             marker="x",
             s=20
